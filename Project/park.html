@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seoul Park</title>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="park.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="park.css">
+    <link rel="apple-touch-icon" href="park.png" />
+    <style>
+        img.static{
+            position: static;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">
+          <img src="park.png" alt="logo" style="width:40px;">
+        </a>
+        <h5 style="color: rgb(200, 200, 200);">서울시 공원 정보</h5>
+    </nav>
+    <div class="container">
+        <h3>
+            <p class="text-info">가고 싶은 공원을 검색하세요!</p>
+        </h3>
+    </div>
+    <select id="parkInfo">
+        <option selected></option>
+        <option value="중구">중구</option>
+        <option value="강동구">강동구</option>
+        <option value="과천시">과천시</option>
+        <option value="성동구">성동구</option>
+        <option value="마포구">마포구</option>
+        <option value="종로구">종로구</option>
+        <option value="은평구">은평구</option>
+        <option value="영등포구">영등포구</option>
+        <option value="강서구">강서구</option>
+        <option value="동대문구">동대문구</option>
+        <option value="동작구">동작구</option>
+        <option value="광진구">광진구</option>
+        <option value="용산구">용산구</option>
+        <option value="관악구">관악구</option>
+        <option value="서초구">서초구</option>
+        <option value="금천구">금천구</option>
+        <option value="성북구">성북구</option>
+        <option value="구로구">구로구</option>
+        <option value="서대문구">서대문구</option>
+        <option value="강남구">강남구</option>
+        <option value="노원구">노원구</option>
+        <option value="양천구">양천구</option>
+    </select>
+    <input type="button" class="btn btn-outline-primary" id="search" value="검색" />
+
+    <div id="park">
+    </div>
+    <h4>2017250035_이종수</h4>
+</body>
+</html>
+
