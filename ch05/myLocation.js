@@ -15,6 +15,10 @@ function displayLocation(position){
 
     var div = document.getElementById("location");
     div.innerHTML = "Your are at Latitude: " + latitude + ", Longitude: " + longitude;
+
+    var km = computeDistance(position.coords, ourCoords);
+    var distance = document.getElementById("distance");
+    distance.innerHTML = "You are " + km + "km from the Sadang Station"
 }
 
 function displayError(){
@@ -31,3 +35,26 @@ function displayError(){
     var div = document.getElementById("location");
     div.innerHTML = errorMessage;
 }
+
+function computeDistance(startCoords, destCoords){
+    var startLatRads = degreeToRadians(startCoords.latitude);
+    var startLongRads = degreeToRadians(startCoords.longitude);
+    var destLatRads = degreeToRadians(destCoords.latitude);
+    var destLongRads = degreeToRadians(destCoords.longitude);
+
+    var Radius = 6371; //radius of the Earth in km
+    var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + 
+                        Math.cos(startLatRads) * Math.cos(destLatRads) *
+                        Math.cos(startLongRads - destLongRads)) * Radius;
+return distance;
+}
+
+function degreeToRadians(degree){
+    var radians = (degree * Math.PI)/100;
+    return radians;
+}
+
+var ourCoords = {
+    latitude: 37.477128,
+    longitude: 126.981734
+};
